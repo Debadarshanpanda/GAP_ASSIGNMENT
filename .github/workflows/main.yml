@@ -1,8 +1,7 @@
 name: First workflow
 
 
-on: 
-  workflow_dispatch
+on: issues
 
 jobs:
   build:
