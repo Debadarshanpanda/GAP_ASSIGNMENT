@@ -1,8 +1,8 @@
 name: GAP project schdule trigger workflow
  
  
-on: schedule
-##    - cron: '* * * * *'
+on: schedule:
+       - cron: '* * * * *'
  
 jobs: 
 
