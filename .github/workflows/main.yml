@@ -2,9 +2,7 @@ name: Event fillters
  
  
 on: 
-  pull_request:
-   branches:
-        - main
+  push
  
 jobs: 
   build:
@@ -14,6 +12,7 @@ jobs:
         run: echo "build"
  
   test:
+    needs: build
     runs-on: windows-latest
     steps:
       - name: Print test - chrome
@@ -22,6 +21,7 @@ jobs:
         run: echo "test edge"
  
   deploy:
+    needs: [build, test]
     runs-on: ubuntu-latest
     steps:
       - name: Print deploy
