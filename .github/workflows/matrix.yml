@@ -1,4 +1,4 @@
-name: Matrix_Job-index
+name: Matrix
 
 on:
   workflow_dispatch
@@ -11,10 +11,22 @@ jobs:
        matrix:
         include:
           - index: 0
+            total: 4
             os:  ubuntu-latest
+            java: 17
           - index: 1
-            os: windows-latest  
-        java-version: [17,21]
+            total: 4
+            os: ubuntu-latest 
+            java: 21
+          - index: 2
+            total: 4
+            os: windows-latest
+            java: 17
+          - index: 3
+            total: 4
+            os: windows-latest
+            java: 21
+        
     steps:
       - name: Setup Java JDK
         uses: actions/setup-java@v3.14.1
