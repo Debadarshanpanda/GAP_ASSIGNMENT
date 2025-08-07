@@ -16,5 +16,5 @@ jobs:
         env:
           MY_VAR: steps  # Step-level override
         run: |
-          echo "Global env: ${{ env.MY_VAR }}" 
+          echo '${{secrets.PASSWORD}}'
 
