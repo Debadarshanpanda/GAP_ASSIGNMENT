@@ -44,6 +44,11 @@ jobs:
           echo "Action Path: ${{ github.action_path }}"
           echo "Action Repository: ${{ github.action_repository }}"
           echo "Action Ref: ${{ github.action_ref }}"
+      - name: Examples
+        if: github.ref ==  'refs/heads/main'
+        run: echo 'deploy'
+      - if: github.event_name == 'pull_request'
+        run: echo 'trigger the workflow'
 
           
 
