@@ -1,42 +1,29 @@
-name: GAP project schdule trigger workflow
- 
- 
-on: schedule:
-       - cron: '* * * * *'
- 
-jobs: 
+name: GAP project schedule trigger workflow
 
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # Runs at midnight UTC on the 1st day of every month
+
+jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-
       - name: Print build
-
         run: echo "build"
- 
+
   test:
-
     runs-on: windows-latest
-
     steps:
-
       - name: Print test - chrome
-
         run: echo "test chrome"
 
       - name: Print test - edge
-
         run: echo "test edge"
- 
+
   deploy:
-
     runs-on: ubuntu-latest
-
     steps:
-
       - name: Print deploy
-
         run: echo "deploy"
+
  
